@@ -31,11 +31,12 @@ router.get("/home", (ctx, next) => {
   idx = 0;
   let timer = setInterval(() => {
     idx++;
-    if (idx > 20) {
+    if (idx > 240) {
       clearInterval(timer);
       return;
     }
-    url = `https://s.ui.cn/index.html?p=${idx}&t=ds&type=project&other_w=%E9%98%85%E8%AF%BB&keywords=app`;
+    //https://s.ui.cn/index.html?p=${idx}&t=ds&type=project&other_w=%E9%98%85%E8%AF%BB&keywords=app  
+    url = `http://www.ui.cn/list.html?p=${idx}&r=main`;
     timePlay(url);
     console.log('抓取'+idx + '次')
   }, 1000);
@@ -58,7 +59,7 @@ router.get("/home", (ctx, next) => {
             let $element = $(element);
             if (index > 0) {
               arr.push({
-                title: $element.find(".title").text(),
+                title: $element.find(".title").text().trim(),
                 exhibition: $element
                   .children(".cover")
                   .children("a")
@@ -104,4 +105,4 @@ router.get("/home", (ctx, next) => {
   ctx.body = arr;
 });
 app.use(router.routes()).use(router.allowedMethods());
-app.listen(3000);
+app.listen(5000);
