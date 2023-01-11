@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "knex": "^0.20.6",
+    "knex": "^2.4.0",
     "koa": "^2.11.0",
     "koa-router": "^7.4.0",
     "mysql": "^2.17.1",
